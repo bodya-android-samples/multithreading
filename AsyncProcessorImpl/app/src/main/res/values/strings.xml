@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AsyncProcessorImpl</string>
+    <string name="exception_message">exception</string>
+    <string name="start">start</string>
+    <string name="reset">reset</string>
+</resources>
