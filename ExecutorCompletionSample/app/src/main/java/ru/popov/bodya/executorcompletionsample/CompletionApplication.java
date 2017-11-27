@@ -7,11 +7,11 @@ public class CompletionApplication extends Application {
 
     private Worker worker;
 
-
     @Override
     public void onCreate() {
         super.onCreate();
         worker = new Worker();
+        worker.start();
     }
 
     public Worker getWorker() {

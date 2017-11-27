@@ -1,9 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "26.0.0"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "ru.popov.bodya.executorcompletionsample"
         minSdkVersion 15
@@ -31,8 +30,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.4.0'
     compile 'com.jakewharton:butterknife:8.6.0'
-    compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 }

@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements Worker.LoaderCall
         worker = ((CompletionApplication) getApplication()).getWorker();
         worker.setListener(this);
 
-        button.setOnClickListener(v -> worker.queueTask(() -> drawableFromUrl("https://avatars2.githubusercontent.com/u/9767952?v=3&s=460")));
+        button.setOnClickListener(v -> worker.queueTask(() -> drawableFromUrl("https://avatars2.githubusercontent.com/u/9767952?v=3&s=460"), Drawable.class));
     }
 
     public static Drawable drawableFromUrl(String url) throws IOException {
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements Worker.LoaderCall
         }
         return Drawable.createFromStream(is, "src");
     }
-
 
     @Override
     protected void onDestroy() {
