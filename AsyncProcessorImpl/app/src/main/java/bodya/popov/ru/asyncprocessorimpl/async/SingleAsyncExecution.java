@@ -26,7 +26,7 @@ public class SingleAsyncExecution<T> implements WorkerHandlerThread.WorkerCallba
         if (callable == null) {
             throw new IllegalStateException("Callable cannot be null");
         }
-        return new SingleAsyncExecution<T>(callable);
+        return new SingleAsyncExecution<>(callable);
     }
 
     private SingleAsyncExecution(@NonNull Callable<? extends T> callable) {
@@ -46,7 +46,7 @@ public class SingleAsyncExecution<T> implements WorkerHandlerThread.WorkerCallba
     }
 
     public void execute() {
-        submit(mCallable, mWeakCallback.get());
+        submit(mCallable);
     }
 
     @Override
@@ -61,8 +61,8 @@ public class SingleAsyncExecution<T> implements WorkerHandlerThread.WorkerCallba
     }
 
 
-    private void submit(@NonNull Callable<? extends T> callable, Callback callback) {
-        final FutureTask<T> futureTask = new FutureTask<>(callable, callback);
+    private void submit(@NonNull Callable<? extends T> callable) {
+        final FutureTask<T> futureTask = new FutureTask<>(callable);
         mWorkerHandlerThread.queueTask(futureTask);
     }
 

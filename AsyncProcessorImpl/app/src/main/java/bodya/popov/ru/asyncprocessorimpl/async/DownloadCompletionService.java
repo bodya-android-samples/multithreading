@@ -7,20 +7,20 @@ import java.util.concurrent.ExecutorService;
  * @author Popov Bogdan
  */
 
-public class DownloadCompletionService <T> extends ExecutorCompletionService<T> {
+class DownloadCompletionService <T> extends ExecutorCompletionService<T> {
 
     private ExecutorService executor;
 
-    public DownloadCompletionService(ExecutorService executor) {
+    DownloadCompletionService(ExecutorService executor) {
         super(executor);
         this.executor = executor;
     }
 
-    public void shutdown() {
+    void shutdown() {
         executor.shutdown();
     }
 
-    public boolean isTerminated() {
+    boolean isTerminated() {
         return executor.isTerminated();
     }
 }
